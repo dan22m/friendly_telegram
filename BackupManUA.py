@@ -1,7 +1,7 @@
 #   Coded by D4n13l3k00    #
 #     t.me/D4n13l3k00      #
 # This code under AGPL-3.0 #
-
+# translated to UA from t.me/Daniel_Maklein
 import ast
 import io
 
@@ -34,7 +34,7 @@ class BackupManMod(loader.Module):
                 already_loaded += 1
         self._db.set("friendly-telegram.modules.loader",
                      "loaded_modules", modules)
-        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено модулей:</i> <code>{valid}</code>\n<i>Загружены ранее:</i> <code>{already_loaded}</code>\n\n" + ("<b>> Юзербот автоматически перезагрузится</b>" if valid != 0 else "<b>> Ничего не загружено</b>"))
+        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено модулеів:</i> <code>{valid}</code>\n<i>Загружено раніше:</i> <code>{already_loaded}</code>\n\n" + ("<b>> Юзербот автоматично перезагрузиться</b>" if valid != 0 else "<b>> Нічого не загружено</b>"))
         if valid != 0:
             await self.allmodules.commands["restart"](await m.respond("_"))
 
@@ -45,12 +45,12 @@ class BackupManMod(loader.Module):
             "friendly-telegram.modules.loader", "loaded_modules", [])
         txt = io.BytesIO("\n".join(modules).encode('utf-8'))
         txt.name = "BackupMan-{}.bkm".format(str((await m.client.get_me()).id))
-        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бэкап модулей</i>\n<i>Модулей:</i> <code>{len(modules)}</code>\n<i>Для загрузки бэкапа используй модуль:</i>\n<code>.dlmod https://d4n13l3k00.ru/modules/BackupMan.py</code>")
+        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бекап модулів</i>\n<i>Модулів:</i> <code>{len(modules)}</code>\n<i>Для загрузки бекапа використовуй модуль модуль:</i>\n<code>.dlmod https://d4n13l3k00.ru/modules/BackupMan.py</code>")
         await m.delete()
 
     @loader.owner
     async def restncmd(self, m):
-        "Установить все заметки из *.bkn файла\n<f> - Заменять уже существующие заметки"
+        "Встановити всі замітки з *.bkn файлу\n<f> - Заміняти вуже існуючі замітки"
         args: list or None = utils.get_args_raw(m)
         force = False
         if "f" in args.lower():
@@ -68,7 +68,7 @@ class BackupManMod(loader.Module):
             else:
                 already_loaded += 1
         self._db.set("friendly-telegram.modules.notes", "notes", notes)
-        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено/заменено заметок:</i> <code>{valid}</code>\n<i>Загружены ранее:</i> <code>{already_loaded}</code>")
+        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено/замінено заміток:</i> <code>{valid}</code>\n<i>Загружені раніше:</i> <code>{already_loaded}</code>")
 
     @loader.owner
     async def backncmd(self, m):
