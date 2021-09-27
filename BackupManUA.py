@@ -34,18 +34,18 @@ class BackupManMod(loader.Module):
                 already_loaded += 1
         self._db.set("friendly-telegram.modules.loader",
                      "loaded_modules", modules)
-        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено модулеів:</i> <code>{valid}</code>\n<i>Загружено раніше:</i> <code>{already_loaded}</code>\n\n" + ("<b>> Юзербот автоматично перезагрузиться</b>" if valid != 0 else "<b>> Нічого не загружено</b>"))
+        await m.edit(f"<b>[BackupMan]</b>\n\n<i>Загружено модулів:</i> <code>{valid}</code>\n<i>Загружено раніше:</i> <code>{already_loaded}</code>\n\n" + ("<b>> Юзербот автоматично перезагрузиться</b>" if valid != 0 else "<b>> Нічого не загружено</b>"))
         if valid != 0:
             await self.allmodules.commands["restart"](await m.respond("_"))
 
     @loader.owner
     async def backmcmd(self, m):
-        "Сделать бэкап модулей в *.bkm файл"
+        "Зробити бекап модулів в *.bkm файл"
         modules = self._db.get(
             "friendly-telegram.modules.loader", "loaded_modules", [])
         txt = io.BytesIO("\n".join(modules).encode('utf-8'))
         txt.name = "BackupMan-{}.bkm".format(str((await m.client.get_me()).id))
-        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бекап модулів</i>\n<i>Модулів:</i> <code>{len(modules)}</code>\n<i>Для загрузки бекапа використовуй модуль модуль:</i>\n<code>.dlmod https://d4n13l3k00.ru/modules/BackupMan.py</code>")
+        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бекап модулів</i>\n<i>Модулів:</i> <code>{len(modules)}</code>\n<i>Для загрузки бекапа використовуй модуль модуль:</i>\n<code>.dlmod https://raw.githubusercontent.com/dan22m/friendly_telegram/main/BackupManUA.py</code>")
         await m.delete()
 
     @loader.owner
@@ -72,9 +72,9 @@ class BackupManMod(loader.Module):
 
     @loader.owner
     async def backncmd(self, m):
-        "Сделать бэкап заметок в *.bkn файл"
+        "Зробити бекап заміток в *.bkn файл"
         modules = self._db.get("friendly-telegram.modules.notes", "notes", {})
         txt = io.BytesIO(str(modules).encode('utf-8'))
         txt.name = "BackupMan-{}.bkn".format(str((await m.client.get_me()).id))
-        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бэкап заметок</i>\n<i>Заметок:</i> <code>{len(modules)}</code>\n<i>Для загрузки бэкапа используй модуль:</i>\n<code>.dlmod https://d4n13l3k00.ru/modules/BackupMan.py</code>")
+        await m.client.send_file(m.to_id, txt, caption=f"<b>[BackupMan]</b> <i>Бекап заміток</i>\n<i>Заміток:</i> <code>{len(modules)}</code>\n<i>Для загрузки бекапу використовуй модуль:</i>\n<code>.dlmod https://raw.githubusercontent.com/dan22m/friendly_telegram/main/BackupManUA.py</code>")
         await m.delete()
