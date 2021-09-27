@@ -7,7 +7,7 @@ from io import BytesIO
 @loader.tds
 class QRtoolsMod(loader.Module):
 	"""Generator and reader of QR codes"""
-	strings = {"name": "QR tool's"}
+	strings = {"name": "QR tool's UA"}
 	@loader.owner
 	async def makeqrcmd(self, message):
 		""".makeqr <text or reply>"""

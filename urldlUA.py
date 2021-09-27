@@ -5,7 +5,7 @@ from telethon.tl.types import MessageEntityUrl, MessageEntityTextUrl
 import os
 
 class aMod(loader.Module):
-	strings = {"name": "UrlDl"}
+	strings = {"name": "UrlDlUA"}
 	
 	async def urldlcmd(self, event):
 		await downloading(event)

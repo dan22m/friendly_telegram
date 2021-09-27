@@ -7,7 +7,7 @@ import textwrap
 @loader.tds
 class MicroQuotesMod(loader.Module):
 	"""Мікроцитати"""
-	strings = {"name": "MicroQuotes"}
+	strings = {"name": "MicroQuotesUA"}
 	
 	async def mqcmd(self, message):
 		""".mq <реплай на текст>"""

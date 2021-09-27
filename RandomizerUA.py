@@ -9,7 +9,7 @@ import random
 
 @loader.tds
 class RandomizerMod(loader.Module):
-    strings = {"name": "Рандомайзер"}
+    strings = {"name": "Рандомайзер UA"}
     prefix = "<b>[Рандомайзер]</b>\n"
 
     @loader.owner

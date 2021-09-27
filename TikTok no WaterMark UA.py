@@ -6,7 +6,7 @@ def register(cb):
 
 class TikTokMod(loader.Module):
     """Завантажуємо відео без їбаної реклами тт"""
-    strings = {'name': 'TikTok no WaterMark'}
+    strings = {'name': 'TikTok no WaterMarkUA'}
 
     async def tikcmd(self, message):
         """Кидає тобі в їбало відео без їбаної реклами тт"""

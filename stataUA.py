@@ -9,7 +9,7 @@ from telethon.tl.types import *
 @loader.tds
 class ChatStatisticMod(loader.Module):
     "Статистика чату"
-    strings = {"name": "ChatStatistic"}
+    strings = {"name": "ChatStatisticUA"}
 
     @loader.owner
     async def statacmd(self, m):

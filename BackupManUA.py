@@ -11,7 +11,7 @@ from .. import loader, utils
 @loader.tds
 class BackupManMod(loader.Module):
     """BackupMan"""
-    strings = {'name': 'BackupMan'}
+    strings = {'name': 'BackupManUA'}
 
     async def client_ready(self, client, db):
         self._db = db

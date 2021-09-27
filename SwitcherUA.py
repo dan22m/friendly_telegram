@@ -31,7 +31,7 @@ async def register(cb):
 class KeyboardSwitcherMod(loader.Module):
     """Зміна розкладки клавиатури у текста"""
     strings = {
-        "name": "KeyboardSwitcher"}
+        "name": "KeyboardSwitcherUA"}
 
     async def switchcmd(self, message):
         """якщо ти зробив помилку і набрав текст не змінивши розкладку клавиатури

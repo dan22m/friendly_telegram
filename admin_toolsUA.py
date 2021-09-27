@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 @loader.tds
 class BanMod(loader.Module):
     """Адмінтулс"""
-    strings = {"name": "AdminTools",
+    strings = {"name": "AdminToolsUA",
                "not_supergroup": "<b>Це не супергруппа!</b>",
                "not_group": "<b>Це не группа!</b>",
                "ban_none": "<b>Кого банити?</b>",
